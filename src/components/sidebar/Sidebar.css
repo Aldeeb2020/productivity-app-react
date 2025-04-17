@@ -1,0 +1,99 @@
+/* Sidebar Block */
+.sidebar{
+    width: 300px;
+    background-color: var(--secondary);
+    border-radius: 15px;
+    padding: 2rem 2rem; 
+}
+.sidebar__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.sidebar__menu{
+    font-size: 3rem !important;
+    color: var(--secondary-text);
+    cursor: pointer;
+}
+.sidebar__category-list{
+    margin-top: 3rem;
+}
+.sidebar__label{
+    color: var(--secondary-text);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+.sidebar__list{
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+.sidebar__list{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar__link{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    border-radius: 7px;
+    align-items: center;
+}
+.sidebar__link.active{
+    background-color: rgba(0, 0, 0, 0.034);
+    font-weight: 600;
+
+}
+.sidebar__link.active .sidebar__link-left{
+    color: #000000be
+}
+.sidebar__link:hover{
+    background-color: rgba(0, 0, 0, 0.034);
+}
+.sidebar__link-left{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: var(--secondary-text);
+}
+.sidebar__link-icon {
+    font-size: 2rem !important;
+}
+.sidebar__link-right{
+    display: flex;
+    justify-content: space-between;
+    background-color: #00000018 ;
+    padding: .5rem 1.5rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+}
+
+.sidebar__link.active .sidebar__link-right{
+    background-color: #ffffffab;
+}
+
+.tag{
+    padding: 1rem 1.6rem;
+    background-color: #D1EAED;
+    border-radius: 7px;
+    width: fit-content;
+    color: var(--secondary-text);
+    font-weight: 600;
+    cursor: pointer;
+}
+.add-list{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    border: solid 1px var(--border);
+    border-radius: 10px;
+}

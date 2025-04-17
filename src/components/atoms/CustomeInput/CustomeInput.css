@@ -1,0 +1,29 @@
+/* Search */
+.custome-input{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: solid 1px var(--border);
+    padding: 0 1rem;   
+    border-radius: 7px;
+}
+.custome-input__input, .search__textarea{
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    padding: 1rem;
+    outline: none;
+    color: var(--primary-text);
+    font-size: 1.6rem;
+}
+.custome-input__input::placeholder,
+.custome-input__input::placeholder
+{
+    color: var(--secondary-text);
+    font-weight: lighter;
+
+}
+.custome-input__input__icon{
+    font-size: 2.5rem !important;
+    color: var(--secondary-text);
+}

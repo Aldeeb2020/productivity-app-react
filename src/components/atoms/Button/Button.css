@@ -1,0 +1,16 @@
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: var(--primary);
+    padding: 1.2rem 1rem;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    color: var(--secondary-text);
+    font-weight: 600;
+}
+.button.button--outline{
+    background-color: transparent;
+    border: solid 1px var(--border);
+}

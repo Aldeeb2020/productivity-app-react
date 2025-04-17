@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    /* Primary Colors */
+    --primary: #FFD43B;
+    --secondary: #e9e9e962;
+    --white: #fff;
+
+    /* Text */
+    --primary-text:#212529;
+    --secondary-text: #444444;
+    --light-text: #44444496;
+
+    /* border raduis */
+    --border-radius: 10px;
+
+    /* Border */
+    --border: rgba(0, 0, 0, 0.062);
+}
+h3{
+    color: var(--secondary-text);
+}
+html{
+    font-size: 10px;
+}
+input, textarea{
+    font-family: "Roboto", sans-serif;
+}
+textarea{
+    min-height: 200px;
+    resize: none;
+}
+body{
+    font-family: "Roboto", sans-serif;
+    font-size: 1.6rem;
+}
+

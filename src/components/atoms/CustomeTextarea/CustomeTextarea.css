@@ -1,0 +1,29 @@
+/* Search */
+.custome-textarea{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: solid 1px var(--border);
+    padding: 0 1rem;   
+    border-radius: 7px;
+}
+.custome-textarea__textarea{
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    padding: 1rem;
+    outline: none;
+    color: var(--primary-text);
+    font-size: 1.6rem;
+}
+.custome-textarea__input::placeholder,
+.custome-textarea__input::placeholder
+{
+    color: var(--secondary-text);
+    font-weight: lighter;
+
+}
+.custome-textarea__input__icon{
+    font-size: 2.5rem !important;
+    color: var(--secondary-text);
+}
