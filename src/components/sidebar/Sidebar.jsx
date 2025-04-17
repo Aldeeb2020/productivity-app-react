@@ -10,8 +10,7 @@ import AddNewList from './AddNewList';
 // Icons 
 import {CalendarMonthOutlinedIcon, StickyNote2OutlinedIcon, ChecklistOutlinedIcon, UpdateOutlinedIcon, AddIcon ,SearchOutlinedIcon} from '../../constant/constant'
 import ColoredIcon from '../atoms/ColoredIcon/ColoredIcon';
-import { useLists } from '../../context/ListsContext';
-import { useState } from 'react';
+import { useLists } from '../../context/ListsProvider';
 
 const taskLinks = [
     { title: "Upcomming", icon: <UpdateOutlinedIcon className="sidebar__link-icon" /> },

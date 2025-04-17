@@ -1,5 +1,5 @@
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import {useStickies} from '../../context/StickiesContext';
+import {useStickies} from '../../context/StickesProvider';
 
 
 function StickyWall(){

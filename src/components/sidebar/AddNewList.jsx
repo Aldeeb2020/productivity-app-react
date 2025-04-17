@@ -3,7 +3,7 @@ import CustomeInput from "../atoms/CustomeInput/CustomeInput";
 import Button from "../atoms/Button/Button";
 import AddIcon from '@mui/icons-material/Add';
 import ColoredIcon from "../atoms/ColoredIcon/ColoredIcon";
-import { useLists } from "../../context/ListsContext";
+import { useLists } from "../../context/ListsProvider";
 import ColorsGroup from "../atoms/ColorsGroup/ColorsGroup";
 // Default list colors
 export default function AddNewList(){

@@ -6,7 +6,7 @@ import './styles/style.css';
 import Sidebar from './components/sidebar/Sidebar';
 import StickyWall from './components/stickywall/StickyWall'
 import StickyForm from './components/stickywall/StickyForm'
-import { useStickies } from './context/StickiesContext';
+import { useStickies } from './context/StickesProvider';
 
 // Data 
 
