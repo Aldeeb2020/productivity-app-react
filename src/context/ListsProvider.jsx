@@ -1,4 +1,6 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useReducer, useState } from 'react'
+import listsReducer from '../reducers/listsReducer';
+import { ACTIONS } from '../reducers/stickiesReducer';
 
 const ListsContext = createContext();
 
@@ -12,16 +14,12 @@ const listLinks = [
 
 const ListsProvider = ({children}) => {
     const [addNewListShow, setAddNewListShow] = useState(false);
-    const [lists, setLists] = useState(listLinks);
+    const [lists, dispatch] = useReducer(listsReducer,listLinks);
 
-    function HandleSetLists(newList){
-        if(newList.title.trim() != ""){
-            setLists([...lists, newList]);
-        }
-    }
+
     
   return (
-    <ListsContext.Provider value={{lists, HandleSetLists, addNewListShow, setAddNewListShow}}>
+    <ListsContext.Provider value={{lists, dispatch, addNewListShow, setAddNewListShow}}>
         {children}
     </ListsContext.Provider>
   )

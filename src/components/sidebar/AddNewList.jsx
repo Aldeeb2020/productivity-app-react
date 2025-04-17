@@ -5,11 +5,15 @@ import AddIcon from '@mui/icons-material/Add';
 import ColoredIcon from "../atoms/ColoredIcon/ColoredIcon";
 import { useLists } from "../../context/ListsProvider";
 import ColorsGroup from "../atoms/ColorsGroup/ColorsGroup";
+import { ACTIONS } from "../../reducers/stickiesReducer";
 // Default list colors
 export default function AddNewList(){
-    const {HandleSetLists} = useLists();
+    const {dispatch} = useLists();
     const [selectedColor, setSelectedColor] = useState('#5C7CFA');
     const [newListTitle, setNewListTitle] = useState('');
+    function HandleSetLists(newList){
+        dispatch({type: ACTIONS.ADD, payload: newList})
+    }
     return(
         <div className="add-list">
             <div className="flex gap-5">

@@ -10,8 +10,6 @@ export default function StickesProvider({children}){
       const [stickyFormShow, setStickyFormShow] = useState(false);
       const [stickies, dispatch] = useReducer(stickiesReducer,tempData);
     
-
-    
     return (
         <StickiesContext.Provider value={{stickyFormShow, setStickyFormShow, stickies, dispatch}}>
             {children}
