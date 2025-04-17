@@ -1,20 +1,20 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useReducer } from "react";
 import { tempData } from '../constant/constant';
+import stickiesReducer from "../reducers/stickiesReducer";
+import { ACTIONS } from "../reducers/stickiesReducer";
 
 let StickiesContext = createContext();
 
 export default function StickesProvider({children}){
       // Use States 
       const [stickyFormShow, setStickyFormShow] = useState(false);
-      const [stickies, setStickies] = useState(tempData);
+      const [stickies, dispatch] = useReducer(stickiesReducer,tempData);
     
       // Add sticky 
       function handleAddSticky(sticky){
-        if(sticky.title.trim() == "" && sticky.description.trim() == ""){
-          return;
-        }
-        setStickies([...stickies,sticky]);
+        dispatch({type: ACTIONS.ADD, payload: sticky})
       }
+      
     return (
         <StickiesContext.Provider value={{stickyFormShow, setStickyFormShow, stickies, handleAddSticky}}>
             {children}

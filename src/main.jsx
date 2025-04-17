@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import Quill from './components/Quill.jsx'
-import StickiesProvider from './context/StickesProvider.jsx'
+import StickiesProvider from './context/StickiesProvider.jsx'
 import ListsProvider from './context/ListsProvider.jsx'
 import Test from './Test.jsx'
 

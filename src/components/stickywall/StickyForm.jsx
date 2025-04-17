@@ -6,7 +6,7 @@ import Button from '../atoms/Button/Button';
 import ColoredIcon from '../atoms/ColoredIcon/ColoredIcon';
 // Icons
 import {CloseRoundedIcon} from '../../constant/constant';
-import { useStickies } from '../../context/StickesProvider';
+import { useStickies } from '../../context/StickiesProvider';
 import ColorsGroup from '../atoms/ColorsGroup/ColorsGroup';
 
 // Context
