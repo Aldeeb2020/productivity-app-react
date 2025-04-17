@@ -10,13 +10,10 @@ export default function StickesProvider({children}){
       const [stickyFormShow, setStickyFormShow] = useState(false);
       const [stickies, dispatch] = useReducer(stickiesReducer,tempData);
     
-      // Add sticky 
-      function handleAddSticky(sticky){
-        dispatch({type: ACTIONS.ADD, payload: sticky})
-      }
-      
+
+    
     return (
-        <StickiesContext.Provider value={{stickyFormShow, setStickyFormShow, stickies, handleAddSticky}}>
+        <StickiesContext.Provider value={{stickyFormShow, setStickyFormShow, stickies, dispatch}}>
             {children}
         </StickiesContext.Provider>
     )

@@ -8,15 +8,22 @@ import ColoredIcon from '../atoms/ColoredIcon/ColoredIcon';
 import {CloseRoundedIcon} from '../../constant/constant';
 import { useStickies } from '../../context/StickiesProvider';
 import ColorsGroup from '../atoms/ColorsGroup/ColorsGroup';
+import { ACTIONS } from '../../reducers/stickiesReducer';
 
 // Context
 
 const StickyForm = () => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
-  const {setStickyFormShow, handleAddSticky} = useStickies();
+  const {setStickyFormShow, dispatch} = useStickies();
   const [selectedColor, setSelectedColor] = useState('#FF6B6B');
-  const [colorMenu, setColorMenu] = useState(false)
+  const [colorMenu, setColorMenu] = useState(false);
+
+  // Add sticky 
+  function handleAddSticky(sticky){
+    dispatch({type: ACTIONS.ADD, payload: sticky})
+  }
+  
   return (
     <form className="sticky-form" onSubmit={(e) => {
       e.preventDefault();
