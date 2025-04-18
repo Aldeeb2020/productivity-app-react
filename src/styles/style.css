@@ -111,9 +111,21 @@ body{
     padding: 2rem;
     line-height: 1.5;
     color: var(--secondary-text);
+    position: relative;
 }
 .sticky__title{
     margin-bottom: 1rem;
+}
+.sticky__delete{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 4rem !important;
+    cursor: pointer;
+    color: #00000057;
+}
+.sticky__delete:hover{
+    color: rgb(252, 126, 126);
 }
 .sticky-form{
     width: 300px;

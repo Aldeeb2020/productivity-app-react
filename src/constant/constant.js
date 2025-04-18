@@ -8,13 +8,13 @@ export const tempData = [
     bg: "#FDF2B3"
   },
   {
-    id:1,
+    id:2,
     title: "Social Media",
     description: "lorem lorem",
     bg: "#D1EAED"
   },
   {
-    id:1,
+    id:3,
     title: "Social Media",
     description: "lorem lorem",
     bg: "#FFDADA"

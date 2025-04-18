@@ -1,10 +1,10 @@
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import {useStickies} from '../../context/StickiesProvider';
-
-
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import { ACTIONS } from '../../reducers/stickiesReducer';
 function StickyWall(){
   // Use Context 
-  const {setStickyFormShow, stickies} = useStickies();
+  const {setStickyFormShow, stickies, dispatch} = useStickies();
 
   return (
     <section className='sticky-wall'>
@@ -24,6 +24,7 @@ function StickyWall(){
                 <div className='sticky' style={{backgroundColor: sticky.bg}}>
                   <h3 className='sticky__title'>{sticky.title}</h3>
                   <p>{sticky.description}</p>
+                  <HighlightOffIcon onClick={() => dispatch({type: ACTIONS.DELETE, payload: sticky.id})} className='sticky__delete'/>
                 </div>
               )
             })

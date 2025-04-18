@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useReducer, useState } from 'react'
 import listsReducer from '../reducers/listsReducer';
-import { ACTIONS } from '../reducers/stickiesReducer';
 
 const ListsContext = createContext();
 
