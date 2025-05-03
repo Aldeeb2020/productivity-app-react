@@ -116,13 +116,16 @@ body{
 .sticky__title{
     margin-bottom: 1rem;
 }
-.sticky__delete{
+.sticky__delete, .sticky__update{
     position: absolute;
     bottom: 10px;
     right: 10px;
     font-size: 4rem !important;
     cursor: pointer;
     color: #00000057;
+}
+.sticky__update{
+    right: 50px;
 }
 .sticky__delete:hover{
     color: rgb(252, 126, 126);

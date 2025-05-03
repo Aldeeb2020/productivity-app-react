@@ -11,14 +11,15 @@ import { useStickies } from './context/StickiesProvider';
 // Data 
 
 function App() {
-  const {stickyFormShow} = useStickies();
+  const {stickyFormShow, formData} = useStickies();
   return (
     <>
     <div className='container'>
         <Sidebar />
         <section className='main-content'>
           <StickyWall />
-          {stickyFormShow && <StickyForm/>}
+          {stickyFormShow == "add" && <StickyForm /> }
+          {stickyFormShow == "update" && <StickyForm mode='update' stickyToUpdate={formData}/> }
         </section>
     </div>
     </>

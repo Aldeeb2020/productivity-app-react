@@ -12,34 +12,47 @@ import { ACTIONS } from '../../reducers/stickiesReducer';
 
 // Context
 
-const StickyForm = () => {
-  const [title, setTitle] = useState("");
-  const [desc, setDesc] = useState("");
+const StickyForm = ({mode = "add", stickyToUpdate}) => {
+  const [id, setId] = useState(mode == "update" ? stickyToUpdate.id : 15);
+  const [title, setTitle] = useState(mode == "update" ? stickyToUpdate.title : "");
+  const [desc, setDesc] = useState(mode == "update" ? stickyToUpdate.desc : "");
+  const [selectedColor, setSelectedColor] = useState(mode == "update" ? stickyToUpdate.bg : '#FF6B6B');
   const {setStickyFormShow, dispatch} = useStickies();
-  const [selectedColor, setSelectedColor] = useState('#FF6B6B');
   const [colorMenu, setColorMenu] = useState(false);
 
   // Add sticky 
+  function handleSubmit(e,sticky){
+    e.preventDefault();
+    if(mode == "add"){
+      handleAddSticky(sticky);
+    }else{
+      handleUpdateSticky(sticky);
+    }
+    setTitle("");
+    setDesc("");
+  }
+
   function handleAddSticky(sticky){
     dispatch({type: ACTIONS.ADD, payload: sticky})
   }
   
+  function handleUpdateSticky(sticky){
+    dispatch({type: ACTIONS.UPDATE, payload: sticky})
+  }
+
   return (
     <form className="sticky-form" onSubmit={(e) => {
-      e.preventDefault();
-      handleAddSticky({id: 15, title:title, description:desc, bg: selectedColor});
-      setTitle("");
-      setDesc("");
+      handleSubmit(e, {id: id, title:title, description:desc, bg: selectedColor})
     }}>
         <div className='sticky-from__header'>
-            <h3>Sticky:</h3>
+            <h3> {mode == "update" ? "Update " : "Add "}Sticky:</h3>
             <button onClick={(e) => {
               e.preventDefault();
               setStickyFormShow(false);
             }}><CloseRoundedIcon /></button>
         </div>
         <div className='sticky-form__controll'> 
-            <CustomeInput icon={<ColoredIcon onClick={() => setColorMenu(true)} style={{backgroundColor:selectedColor}} />}   onChange={setTitle} value={title} placeholder={'Sticky title'}/>
+            <CustomeInput  icon={<ColoredIcon onClick={() => setColorMenu(true)} style={{backgroundColor:selectedColor}} />}   onChange={setTitle} value={title} placeholder={'Sticky title'}/>
         </div>
         <ColorsGroup onClick={setSelectedColor} />
 
@@ -50,7 +63,6 @@ const StickyForm = () => {
             <Button title={'Delete'} type={'outline'}/>
             <Button title={'Save'}/>
         </div>
-
     </form>
   )
 }
